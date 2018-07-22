@@ -1,0 +1,27 @@
+﻿@using Fourth.Services.ViewModels.Forms
+@using Fourth.Services.ViewModels.ViewModels
+
+@model CustomersViewModel
+
+@{
+    ViewBag.Title = "Customers";
+}
+
+<div class="row">
+    <div class="col-md-12 row" id="search-form-container">
+        @Html.Partial("~/Views/Customer/_SearchFormPartial.cshtml", Model.SearchForm)
+    </div>
+    <div class="col-md-12 row" id="customers">
+        @Html.Partial("~/Views/Customer/_CustomersGridPartial.cshtml", Model.Customers)
+    </div>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/customer")
+
+    <script>
+        $(document).ready(function () {
+            customer.init();
+        });
+    </script>
+}

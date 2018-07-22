@@ -1,0 +1,35 @@
+﻿@using Fourth.Services.ViewModels.ViewModels
+
+@model IList<OrderViewModel>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Orders</div>
+    <div class="panel-body">
+        @if (Model.Count > 0)
+        {
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">@Html.LabelFor(m => m[0].OrderID)</th>
+                        <th scope="col">@Html.LabelFor(m => m[0].TotalProducts)</th>
+                        <th scope="col">@Html.LabelFor(m => m[0].TotalQuantities)</th>
+                        <th scope="col">@Html.LabelFor(m => m[0].TotalPrice)</th>
+                        <th scope="col">@Html.LabelFor(m => m[0].PossibleProblem)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (OrderViewModel order in Model)
+                {
+                        @Html.Partial("~/Views/Customer/_CustomerOrdersRowPartial.cshtml", order)
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>
+                No orders found!
+            </p>
+        }
+    </div>
+</div>

@@ -1,0 +1,10 @@
+﻿@using Fourth.Services.ViewModels.Models
+
+@model CustomerGridModel
+
+<tr>
+    <td>@Model.Name</td>
+    <td>@Model.OrdersCount</td>
+    <td><a href="@Url.Action("Info", "Customer", new { id = Model.Id })">View</a></td>
+</tr>
+

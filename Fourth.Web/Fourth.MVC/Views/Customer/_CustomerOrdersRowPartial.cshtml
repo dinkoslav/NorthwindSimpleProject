@@ -1,0 +1,12 @@
+﻿@using Fourth.Services.ViewModels.ViewModels
+
+@model OrderViewModel
+
+<tr>
+    <td>@Model.OrderID</td>
+    <td>@Model.TotalProducts</td>
+    <td>@Model.TotalQuantities</td>
+    <td>@Model.TotalPrice.ToString("0.00")</td>
+    <td>@Html.CheckBoxFor(m => m.PossibleProblem, new { @disabled = "disabled" })</td>
+</tr>
+

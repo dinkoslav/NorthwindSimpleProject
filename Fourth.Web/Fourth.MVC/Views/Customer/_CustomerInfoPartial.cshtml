@@ -1,0 +1,42 @@
+﻿@using Fourth.Services.ViewModels.Models
+
+@model CustomerModel
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">Customer</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-2">@Html.LabelFor(m => m.CompanyName)</div>
+                <div class="col-md-4">@Model.CompanyName</div>
+                <div class="col-md-2">@Html.LabelFor(m => m.ContactName)</div>
+                <div class="col-md-4">@Model.ContactName</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">@Html.LabelFor(m => m.ContactTitle)</div>
+                <div class="col-md-4">@Model.ContactTitle</div>
+                <div class="col-md-2">@Html.LabelFor(m => m.Address)</div>
+                <div class="col-md-4">@Model.Address</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">@Html.LabelFor(m => m.City)</div>
+                <div class="col-md-4">@Model.City</div>
+                <div class="col-md-2">@Html.LabelFor(m => m.Region)</div>
+                <div class="col-md-4">@Model.Region</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">@Html.LabelFor(m => m.PostalCode)</div>
+                <div class="col-md-4">@Model.PostalCode</div>
+                <div class="col-md-2">@Html.LabelFor(m => m.Country)</div>
+                <div class="col-md-4">@Model.Country</div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">@Html.LabelFor(m => m.Phone)</div>
+                <div class="col-md-4">@Model.Phone</div>
+                <div class="col-md-2">@Html.LabelFor(m => m.Fax)</div>
+                <div class="col-md-4">@Model.Fax</div>
+            </div>
+        </div>
+    </div>
+</div>
+

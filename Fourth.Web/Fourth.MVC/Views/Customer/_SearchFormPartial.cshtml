@@ -1,0 +1,21 @@
+﻿@using Fourth.Services.ViewModels.Forms
+
+@model CustomerSearchViewModel
+
+<div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">Search Form</div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Search", "Customer", FormMethod.Get))
+            {
+                <div class="row">
+                    <div class="col-md-12">@Html.LabelFor(m => m.Name)</div>
+                    <div class="col-md-8">@Html.TextBoxFor(m => m.Name)</div>
+                    <div class="col-md-4"><input type="submit" value="Submit" /></div>
+                    <div class="col-md-12">@Html.ValidationMessageFor(m => m.Name)</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+﻿@using Fourth.Services.ViewModels.Forms
+@using Fourth.Services.ViewModels.ViewModels
+
+@model CustomerViewModel
+
+@{
+    ViewBag.Title = Model.Customer.CompanyName;
+}
+
+<div class="row">
+    <div class="col-md-12 row">
+        @Html.Partial("~/Views/Customer/_CustomerInfoPartial.cshtml", Model.Customer)
+    </div>
+    <div class="col-md-12 row">
+        @Html.Partial("~/Views/Customer/_CustomerOrdersPartial.cshtml", Model.Orders)
+    </div>
+</div>
