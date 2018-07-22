@@ -4,14 +4,26 @@
 @model CustomerViewModel
 
 @{
-    ViewBag.Title = Model.Customer.CompanyName;
+    if (Model.Customer != null)
+    {
+        ViewBag.Title = Model.Customer.CompanyName;
+    }
 }
 
 <div class="row">
-    <div class="col-md-12 row">
-        @Html.Partial("~/Views/Customer/_CustomerInfoPartial.cshtml", Model.Customer)
-    </div>
-    <div class="col-md-12 row">
-        @Html.Partial("~/Views/Customer/_CustomerOrdersPartial.cshtml", Model.Orders)
-    </div>
+    @if (Model.Customer != null)
+    {
+        <div class="col-md-12 row">
+            @Html.Partial("~/Views/Customer/_CustomerInfoPartial.cshtml", Model.Customer)
+        </div>
+        <div class="col-md-12 row">
+            @Html.Partial("~/Views/Customer/_CustomerOrdersPartial.cshtml", Model.Orders)
+        </div>
+    }
+    else
+    {
+        <div class="col-md-12 row">
+            <p>There is no customer with the given Customer ID!</p>
+        </div>
+    }
 </div>

@@ -32,14 +32,15 @@
 
         public CustomerViewModel GetCustomer(string id)
         {
+            CustomerViewModel viewModel = new CustomerViewModel();
             CustomerModel customer = this.customerWebService.GetById(id);
-            IList<OrderModel> orders = this.customerWebService.GetOrdersByCustomerId(id);
-            IList<OrderViewModel> ordersViewModels = this.GetOrdersViewModels(orders);
-            CustomerViewModel viewModel = new CustomerViewModel
+            viewModel.Customer = customer;
+            if (customer != null)
             {
-                Customer = customer,
-                Orders = ordersViewModels
-            };
+                IList<OrderModel> orders = this.customerWebService.GetOrdersByCustomerId(id);
+                IList<OrderViewModel> ordersViewModels = this.GetOrdersViewModels(orders);
+                viewModel.Orders = ordersViewModels;
+            }
 
             return viewModel;
         }
